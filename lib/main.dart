@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(
                     height: 20,
                   ),
-                  shareButton('Share Device ID', () => Share.share(_deviceId)),
+                  shareButton('Share Device ID', () => Share.share(_deviceId),),
                   const Divider(height: 30, color: Colors.grey),
                   const SizedBox(
                     height: 20,
