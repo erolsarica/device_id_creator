@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:device_id_creator/share_button.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -77,10 +78,11 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(
                     height: 20,
                   ),
+                  shareButton('Share Device ID', () => null),
                   const Divider(height: 30, color: Colors.grey),
                   const SizedBox(
                     height: 20,
-                  ),
+                  ),                  
                   const Text(
                     'Encoded Device ID',
                     style: TextStyle(color: Colors.blueGrey, fontSize: 18, fontWeight: FontWeight.bold),
@@ -93,9 +95,13 @@ class _MyAppState extends State<MyApp> {
                         borderRadius: const BorderRadius.all(Radius.circular(5)),
                         color: Colors.grey[300],
                       ),
-                      child: Text(encoded, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                      child: Text(encoded, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
                     );
-                  })
+                  },),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  shareButton('Share Encoded Device ID', () => null),
                 ],
               )),
         ),
