@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 shareButton(String title, Function()? onPressed) {
   return Container(
     width: double.infinity,
-    height: 50,
+    height: 60,
     margin: const EdgeInsets.symmetric(vertical: 10),
     child: ElevatedButton( 
       style: ButtonStyle(

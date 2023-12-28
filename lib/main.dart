@@ -66,39 +66,64 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   const Text(
                     'Device ID',
-                    style: TextStyle(color: Colors.blueGrey, fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.grey, fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.only(
+                      top: 60,
+                      bottom: 60,
+                      left: 20,
+                      right: 20,
+                    ),
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(5)),
-                      color: Colors.grey[300],
+                      color: Colors.grey[200],
                     ),
-                    child: Text(_deviceId, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                    child: Text(_deviceId, textAlign: TextAlign.center, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  shareButton('Share Device ID', () => Share.share(_deviceId),),
+                  shareButton(
+                    'Share Device ID',
+                    () => Share.share(_deviceId),
+                  ),
                   const Divider(height: 30, color: Colors.grey),
                   const SizedBox(
                     height: 20,
-                  ),                  
+                  ),
                   const Text(
                     'Encoded Device ID',
-                    style: TextStyle(color: Colors.blueGrey, fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.grey, fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Builder(builder: (context) {
-                    String encoded = base64.encode(utf8.encode(_deviceId));
-                    return Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(5)),
-                        color: Colors.grey[300],
-                      ),
-                      child: Text(encoded, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
-                    );
-                  },),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Builder(
+                    builder: (context) {
+                      String encoded = base64.encode(utf8.encode(_deviceId));
+                      return Container(
+                        padding: const EdgeInsets.only(
+                          top: 60,
+                          bottom: 60,
+                          left: 20,
+                          right: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(Radius.circular(5)),
+                          color: Colors.grey[200],
+                        ),
+                        child: Text(
+                          encoded,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      );
+                    },
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
