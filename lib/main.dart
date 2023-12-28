@@ -6,6 +6,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:mobile_device_identifier/mobile_device_identifier.dart';
+import 'package:share_plus/share_plus.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(
                     height: 20,
                   ),
-                  shareButton('Share Device ID', () => null),
+                  shareButton('Share Device ID', () => Share.share(_deviceId)),
                   const Divider(height: 30, color: Colors.grey),
                   const SizedBox(
                     height: 20,
