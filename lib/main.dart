@@ -102,7 +102,7 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(
                     height: 20,
                   ),
-                  shareButton('Share Encoded Device ID', () => null),
+                  shareButton('Share Encoded Device ID', () => Share.share(base64.encode(utf8.encode(_deviceId)))),
                 ],
               )),
         ),
